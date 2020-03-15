@@ -1,3 +1,5 @@
+@ECHO OFF
+
 rem script to set CPU affiniy for all process running with same name
 
 rem modify $PROCESS in GET-PROCESS with the name of process you want to edit affinity
