@@ -37,8 +37,9 @@ SET "L1="C:\Program Files (x86)\Microsoft Visual Studio\2019\ProfessionalNET\VC\
 SET "L2="C:\Program Files (x86)\Windows Kits\10\Lib\10.0.18362.0\um\x64""
 SET "L3="C:\Program Files (x86)\Windows Kits\10\Lib\10.0.18362.0\ucrt\x64""
 
-SET "LINKOPTS=/DLL /NOENTRY /NXCOMPAT /DYNAMICBASE /MACHINE:X64"
-
-%MSVCEXE% %FILEPATHNAME% /I%I1% /I%I2% /I%I3% /I%I4% /I%I5% /link /OUT:%FILEPATHNAMEDLL% %LINKOPTS% /LIBPATH:%L1% /LIBPATH:%L2% /LIBPATH:%L3%
+SET "COMPILEROPTS=/Zc:wchar_t /W1 /O2 /fp:precise /Gd /GS /MD /Gm- /Zc:inline /errorReport:prompt /WX- /FC /EHsc"
+SET "LINKOPTS=/DLL /NXCOMPAT /DYNAMICBASE /MACHINE:X64 /INCREMENTAL:NO /MANIFESTUAC:"level='asInvoker' uiAccess='false'""
+SET "LIBS=kernel32.lib user32.lib"
+%MSVCEXE% %FILEPATHNAME% /I%I1% /I%I2% /I%I3% /I%I4% /I%I5% %COMPILEROPTS% /link /OUT:%FILEPATHNAMEDLL% %LINKOPTS% /LIBPATH:%L1% /LIBPATH:%L2% /LIBPATH:%L3% /defaultlib:%LIBS%
 
 pause
