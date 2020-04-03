@@ -36,15 +36,8 @@ SET "L2="C:\Program Files (x86)\Windows Kits\10\Lib\10.0.18362.0\um\x64""
 SET "L3="C:\Program Files (x86)\Windows Kits\10\Lib\10.0.18362.0\ucrt\x64""
 
 SET "COMPILEROPTS=/Zc:wchar_t /W1 /O2 /fp:precise /Gd /GS /MD /Gm- /Zc:inline /errorReport:prompt /WX- /FC /EHsc"
-
 SET "LINKOPTS=/NXCOMPAT /DYNAMICBASE /MACHINE:X64 /INCREMENTAL:NO /MANIFESTUAC:"level='asInvoker' uiAccess='false'""
-
 SET "LIBS=kernel32.lib user32.lib"
-
-rem %MSVCEXE% %FILEPATHNAME% /I%I1% /I%I2% /I%I3% /I%I4% /I%I5% /link %LINKOPTS% /LIBPATH:%L1% /LIBPATH:%L2% /LIBPATH:%L3%
-
-rem %MSVCEXE% %FILEPATHNAME% /I%I1% /I%I2% /I%I3% /I%I4% /I%I5% /Zc:wchar_t /W1 /O2 /fp:precise /Gd /GS /MD /Gm- /Zc:inline /errorReport:prompt /WX- /FC /EHsc /link %LINKOPTS% /LIBPATH:%L1% /LIBPATH:%L2% /LIBPATH:%L3% /INCREMENTAL:NO /MANIFEST /NXCOMPAT /DYNAMICBASE /MACHINE:X64 /MANIFESTUAC:"level='asInvoker' uiAccess='false'"
-
 %MSVCEXE% %FILEPATHNAME% /I%I1% /I%I2% /I%I3% /I%I4% /I%I5% %COMPILEROPTS% /link %LINKOPTS% /LIBPATH:%L1% /LIBPATH:%L2% /LIBPATH:%L3% /defaultlib:%LIBS%
 
 rem pause
