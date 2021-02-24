@@ -18,11 +18,8 @@ ECHO ---------------------------------------------------------
 ECHO.
 
 cd %1
-
 SET "FILEPATHNAME=%1\%2"
-
 SET MSVCPATH="C:\Program Files (x86)\Microsoft Visual Studio\2019\ProfessionalNET\VC\Tools\MSVC\14.24.28314\bin\Hostx64\x64"
-
 SET "MSVCEXE=%MSVCPATH%\cl.exe"
 
 SET "I1="C:\Program Files (x86)\Microsoft Visual Studio\2019\ProfessionalNET\VC\Tools\MSVC\14.24.28314\include""
