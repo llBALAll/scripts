@@ -1,0 +1,18 @@
+{
+"windows":
+    {
+		//"cmd": ["start","cmd","/k","C:\\Vinicius\\bin\\buildexeMSVCNPP.bat","${file_path}","$file_name"] // out sublime
+		"cmd": ["C:\\Vinicius\\bin\\builddllMSVCNPP.bat","${file_path}","$file_name","${file_base_name}"] // in sublime console
+		//"cmd": ["C:\\mingw64\\bin\\g++.exe","$file_name","-o","${file_base_name}.exe","-static","-Wall","&","start","${file_base_name}.exe"]
+		//"cmd": ["start", "cmd", "/k", "C:\\Users\\vinny\\Desktop\\test.bat","$file","$file_name","${file_path}","${file_base_name}.exe"]
+    },
+    "selector": "source.c++",
+    "shell": true,
+    "working_dir": "${file_path}"
+}
+
+
+// $file_name => filename.cpp
+// $file => diretorio\filename.cpp
+// ${file_path} => diretorio
+// ${file_base_name}.exe => filename.exe
