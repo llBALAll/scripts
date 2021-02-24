@@ -12,3 +12,4 @@ IF "%1"=="" (
 certutil.exe -encodehex %1 "hexdump.temp" >NUL
 type hexdump.temp
 del /f hexdump.temp
+EXIT /B 0
