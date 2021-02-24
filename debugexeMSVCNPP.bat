@@ -13,7 +13,7 @@ rem SAVE, PUT A NAME AND CHOOSE THE SHOTCUT, OK
 
 ECHO.
 ECHO ---------------------------------------------------------
-ECHO -                 MSVC 64b C++ build exe                -
+ECHO -                 MSVC 64b C++ debug exe                -
 ECHO ---------------------------------------------------------
 ECHO.
 
@@ -30,26 +30,23 @@ SET "I2="C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um""
 SET "I3="C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt""
 SET "I4="C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared""
 SET "I5="C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\winrt""
-SET "I6="C:\Program Files (x86)\Microsoft Visual Studio\2019\ProfessionalNET\VC\Tools\MSVC\14.24.28314\atlmfc\include""
 
 SET "L1="C:\Program Files (x86)\Microsoft Visual Studio\2019\ProfessionalNET\VC\Tools\MSVC\14.24.28314\lib\x64""
 SET "L2="C:\Program Files (x86)\Windows Kits\10\Lib\10.0.18362.0\um\x64""
 SET "L3="C:\Program Files (x86)\Windows Kits\10\Lib\10.0.18362.0\ucrt\x64""
-SET "L4="C:\Program Files (x86)\Microsoft Visual Studio\2019\ProfessionalNET\VC\Tools\MSVC\14.24.28314\atlmfc\lib\x64""
 
-rem linkar estaticamente as dlls do runtime do windows
-rem SET "COMPILEROPTS=/Zc:wchar_t /W1 /O2 /fp:precise /Gd /GS /Gm- /Zc:inline /errorReport:prompt /WX- /FC /EHsc"
-rem linkar dinamicamente as dlls do runtime do windows
-SET "COMPILEROPTS=/Zc:wchar_t /W1 /O2 /fp:precise /Gd /GS /MD /Gm- /Zc:inline /errorReport:prompt /WX- /FC /EHsc"
+rem sem otimizacao e dlls do runtime; com simbolos p/ debug
+SET "COMPILEROPTS=/Zc:wchar_t /W1 /Od /fp:precise /Gd /GS /Gm- /Zi /Zc:inline /errorReport:prompt /WX- /FC /EHsc"
 
-SET "LINKOPTS=/NXCOMPAT /DYNAMICBASE /MACHINE:X64 /INCREMENTAL:NO /MANIFESTUAC:"level='asInvoker' uiAccess='false'""
+rem com simbolos p/ debug, DEP, ASLR; 64b
+SET "LINKOPTS=/DEBUG /NXCOMPAT /DYNAMICBASE /MACHINE:X64 /INCREMENTAL:NO /MANIFESTUAC:"level='asInvoker' uiAccess='false'""
 
-SET "LIBS=kernel32.lib user32.lib shell32.lib Advapi32.lib ntdll.lib"
+SET "LIBS=kernel32.lib user32.lib shell32.lib"
 
 rem %MSVCEXE% %FILEPATHNAME% /I%I1% /I%I2% /I%I3% /I%I4% /I%I5% /link %LINKOPTS% /LIBPATH:%L1% /LIBPATH:%L2% /LIBPATH:%L3%
 
 rem %MSVCEXE% %FILEPATHNAME% /I%I1% /I%I2% /I%I3% /I%I4% /I%I5% /Zc:wchar_t /W1 /O2 /fp:precise /Gd /GS /MD /Gm- /Zc:inline /errorReport:prompt /WX- /FC /EHsc /link %LINKOPTS% /LIBPATH:%L1% /LIBPATH:%L2% /LIBPATH:%L3% /INCREMENTAL:NO /MANIFEST /NXCOMPAT /DYNAMICBASE /MACHINE:X64 /MANIFESTUAC:"level='asInvoker' uiAccess='false'"
 
-%MSVCEXE% %FILEPATHNAME% /I%I1% /I%I2% /I%I3% /I%I4% /I%I5% /I%I6% %COMPILEROPTS% /link %LINKOPTS% /LIBPATH:%L1% /LIBPATH:%L2% /LIBPATH:%L3% /LIBPATH:%L4% /defaultlib:%LIBS%
+%MSVCEXE% %FILEPATHNAME% /I%I1% /I%I2% /I%I3% /I%I4% /I%I5% %COMPILEROPTS% /link %LINKOPTS% /LIBPATH:%L1% /LIBPATH:%L2% /LIBPATH:%L3% /defaultlib:%LIBS%
 
 rem pause

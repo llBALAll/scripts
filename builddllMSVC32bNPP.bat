@@ -13,14 +13,14 @@ rem SAVE, PUT A NAME AND CHOOSE THE SHOTCUT, OK
 
 ECHO.
 ECHO ---------------------------------------------------------
-ECHO -                 MSVC C++ Build DLL 64b                -
+ECHO -                 MSVC C++ Build DLL 32b                -
 ECHO ---------------------------------------------------------
 ECHO.
 
 cd %1
 SET "FILEPATHNAME=%1\%2"
 SET "FILEPATHNAMEDLL=%1\%3.dll"
-SET MSVCPATH="C:\Program Files (x86)\Microsoft Visual Studio\2019\ProfessionalNET\VC\Tools\MSVC\14.24.28314\bin\Hostx64\x64"
+SET MSVCPATH="C:\Program Files (x86)\Microsoft Visual Studio\2019\ProfessionalNET\VC\Tools\MSVC\14.24.28314\bin\Hostx64\x86"
 SET "MSVCEXE=%MSVCPATH%\cl.exe"
 
 SET "I1="C:\Program Files (x86)\Microsoft Visual Studio\2019\ProfessionalNET\VC\Tools\MSVC\14.24.28314\include""
@@ -31,16 +31,16 @@ SET "I5="C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\winrt""
 SET "I6="C:\Program Files (x86)\Microsoft Visual Studio\2019\ProfessionalNET\VC\Tools\MSVC\14.24.28314\atlmfc\include""
 SET "INCPATHS=/I%I1% /I%I2% /I%I3% /I%I4% /I%I5% /I%I6%"
 
-SET "L1="C:\Program Files (x86)\Microsoft Visual Studio\2019\ProfessionalNET\VC\Tools\MSVC\14.24.28314\lib\x64""
-SET "L2="C:\Program Files (x86)\Windows Kits\10\Lib\10.0.18362.0\um\x64""
-SET "L3="C:\Program Files (x86)\Windows Kits\10\Lib\10.0.18362.0\ucrt\x64""
+SET "L1="C:\Program Files (x86)\Microsoft Visual Studio\2019\ProfessionalNET\VC\Tools\MSVC\14.24.28314\lib\x86""
+SET "L2="C:\Program Files (x86)\Windows Kits\10\Lib\10.0.18362.0\um\x86""
+SET "L3="C:\Program Files (x86)\Windows Kits\10\Lib\10.0.18362.0\ucrt\x86""
 SET "L4="C:\Program Files (x86)\Microsoft Visual Studio\2019\ProfessionalNET\VC\Tools\MSVC\14.24.28314\atlmfc\lib\x64""
 SET "LIBPATHS=/LIBPATH:%L1% /LIBPATH:%L2% /LIBPATH:%L3% /LIBPATH:%L4%"
 
 SET "COMPILEROPTS=/Zc:wchar_t /W1 /O2 /fp:precise /Gd /GS /Gm- /Zc:inline /errorReport:prompt /WX- /FC /EHsc"
 rem SET "COMPILEROPTS=/Zc:wchar_t /W1 /O2 /fp:precise /Gd /GS /MD /Gm- /Zc:inline /errorReport:prompt /WX- /FC /EHsc"
 
-SET "LINKOPTS=/DLL /NXCOMPAT /DYNAMICBASE /MACHINE:X64 /INCREMENTAL:NO /MANIFESTUAC:"level='asInvoker' uiAccess='false'""
+SET "LINKOPTS=/DLL /NXCOMPAT /DYNAMICBASE /MACHINE:X86 /INCREMENTAL:NO /MANIFESTUAC:"level='asInvoker' uiAccess='false'""
 
 SET "LIBS=kernel32.lib user32.lib Shell32.lib"
 
