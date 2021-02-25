@@ -1,0 +1,8 @@
+$$ this script run a command into windbg console and log the output in a file (log_cmd.txt) into windbg path
+$$ usage:	$$>a< log_cmd COMMAND
+$$			$$>a< log_cmd "!process 0 0"
+$$			$$>a< C:\Users\BALA\Desktop\log_cmd "!process 0 0"
+
+.logopen "log_cmd.txt"
+${$arg1}
+.logclose
