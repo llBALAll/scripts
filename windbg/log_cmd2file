@@ -1,8 +1,0 @@
-$$ this script run a command into windbg console (arg1) and log the output in a file (arg2)
-$$ usage:	$$>a< log_cmd2file COMMAND FILEPATH
-$$			$$>a< log_cmd2file "!process 0 0" "test.txt"
-$$			$$>a< C:\Users\BALA\Desktop\log_cmd2file "!process 0 0" "c:\Users\BALA\Desktop\test.txt"
-
-.logopen "${$arg2}"
-${$arg1}
-.logclose
