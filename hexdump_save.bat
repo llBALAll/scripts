@@ -1,7 +1,7 @@
 @ECHO OFF
 
 rem print&save a hexdump of a file
-rem ECHO Usage: hexdump_save INFILE OUTFILE
+rem ECHO Usage: hexdump2file INFILE OUTFILE
 
 IF "%1" neq "" (  
 	IF "%2" neq "" (
@@ -13,5 +13,5 @@ IF "%1" neq "" (
 
 ECHO File not found!
 ECHO.
-ECHO  Usage: hexdump_save INFILE OUTFILE
+ECHO  Usage: hexdump2file INFILE OUTFILE
 EXIT /B 1
