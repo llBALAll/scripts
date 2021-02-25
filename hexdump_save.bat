@@ -3,7 +3,6 @@
 rem print&save a hexdump of a file
 rem ECHO Usage: hexdump_save INFILE OUTFILE
 
-rem IF "%1"=="" (
 IF "%1" neq "" (  
 	IF "%2" neq "" (
 		certutil.exe -encodehex %1 %2 >NUL
@@ -14,5 +13,5 @@ IF "%1" neq "" (
 
 ECHO File not found!
 ECHO.
-ECHO  Usage: dumphexfile INFILE OUTFILE
+ECHO  Usage: hexdump_save INFILE OUTFILE
 EXIT /B 1
