@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Busca por patterns (Bytes) padroes de tipos de arquivos conhecidos p/ detectar que se tem arquivos nao criptografados inseridos nele.
+# Busca por patterns em arquivos, procurando por padroes de tipos de arquivos conhecidos que nao estejam criptografados.
 
 
 if [ "$1" = "" ] || [ "$2" != "" ] ; then
