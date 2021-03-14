@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # simples honeypot unicast utilizando netcat;
-# netcat escuta em uma porta passada como paramentro e quando o cliente se conecta o netcat envia um banner para simular um real servidor rodando na porta;
+# netcat escuta em uma porta passada como parametro e quando o cliente se conecta o netcat envia um banner para simular um real servidor rodando na porta;
 # para que o netcat envie o banner do servico para o cliente crie um arquivo (PORTA.TXT) com o conteudo do banner que o servico real envia para o cliente ao estabelecer a conexao na porta;
 # uso: ./simplehoneypot.sh PORTA
 
