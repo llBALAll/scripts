@@ -8,7 +8,5 @@ if [ "$1" = "" ] || [ "$2" != "" ] ; then
         echo
         exit 1
 else
-
-        echo $1 | od -t c -t x1
-
+        echo -ne $1 | od -t c -t x1
 fi
