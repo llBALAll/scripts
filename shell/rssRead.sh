@@ -8,6 +8,7 @@ testArgs () {
         echo
         echo "  Usage: $0 <ELEMENTS> <URL_RSSFEED_XML>"
         echo
+        echo "    ex: $0 https://news.google.com/rss"
         echo "    obs: hold <ctrl> + <left mouse click> to open link on default browser"
         echo "    <ELEMENTS> :optional number(sum) of items to show"
         echo "      1: title (default)"
