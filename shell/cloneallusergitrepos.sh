@@ -7,7 +7,7 @@ if [ -z $1 ] || [ -n "$2" ]; then
     echo " Script to clone all github repositories of a specified user"
     echo "  Usage: $scriptname <user_name>"
     echo
-      exit 1
+    exit 1
 fi
 
 USER=$1
