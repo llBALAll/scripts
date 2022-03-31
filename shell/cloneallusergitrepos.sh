@@ -1,11 +1,13 @@
 #!/bin/bash
 
-# Clone all github.com repositories for a specified user.
+scriptname=`echo $0 | sed 's/\//\/\n/g' | tail -n 1`
 
-if [ -z $1 ] || [ ! -z "$2" ]; then
+if [ -z $1 ] || [ -n "$2" ]; then
     echo
-    echo "Usage: $0 <user_name>"
-    exit 1;
+    echo " Script to clone all github repositories of a specified user"
+    echo "  Usage: $scriptname <user_name>"
+    echo
+      exit 1
 fi
 
 USER=$1
