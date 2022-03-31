@@ -1,12 +1,13 @@
 #!/bin/bash
 
-#Este script serve pra printar uma string de caracteres ascii em hexadecimal
+scriptname=`echo $0 | sed 's/\//\/\n/g' | tail -n 1`
 
-if [ "$1" = "" ] || [ "$2" != "" ] ; then
-        echo
-        echo "  Usage: $0 "StringToPrintHex""
+if [ -z "$1" ] || [ -n "$2" ]; then
+        echo 
+        echo "Script to print hexadecimal bytes of ascii string"
+        echo "  Usage: $scriptname "string""
         echo
         exit 1
-else
-        echo -ne $1 | od -t c -t x1
 fi
+
+echo -ne $1 | od -t c -t x1
