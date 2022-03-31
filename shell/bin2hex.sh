@@ -1,14 +1,13 @@
 #!/bin/bash
 
-# Este script printa o conteudo de um arquivo binario em hex
+scriptname=`echo $0 | sed 's/\//\/\n/g' | tail -n 1`
 
-if [ "$1" = "" ] || [ "$2" != "" ] ; then
+if [ -z "$1" ] || [ -n "$2" ]; then
         echo
-        echo "  Usage: $0 <FileToPrintBytes>"
+        echo "Script to print file content in hexadecimal bytes"
+        echo "  Usage: $scriptname <file>"
         echo
         exit 1
-else
-        xxd -p $1 | tr -d '\n'
 fi
 
-echo
+xxd -p $1 | tr -d '\n'
