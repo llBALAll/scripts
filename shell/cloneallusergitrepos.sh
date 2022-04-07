@@ -1,11 +1,9 @@
 #!/bin/bash
 
-scriptname=`echo $0 | sed 's/\//\/\n/g' | tail -n 1`
-
 if [ -z $1 ] || [ -n "$2" ]; then
     echo
     echo " Script to clone all github repositories of a specified user"
-    echo "  Usage: $scriptname <user_name>"
+    echo "  Usage: $0 <user_name>"
     echo
     exit 1
 fi
