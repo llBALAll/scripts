@@ -1,11 +1,9 @@
 #!/bin/bash
 
-scriptname=`echo $0 | sed 's/\//\/\n/g' | tail -n 1`
-
 if [ -z "$1" ] || [ -n "$2" ]; then
 	echo
 	echo " Script to enable (IP_FORWARD) and NAT on a specific network interface"
-	echo "  Usage: $scriptname <interface>"
+	echo "  Usage: $0 <interface>"
 	exit 1
 fi
 
